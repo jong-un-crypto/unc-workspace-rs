@@ -6,7 +6,7 @@ license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/unc/unc-workspaces-rs"
 description = """
-Library for automating workflows and testing NEAR smart contracts.
+Library for automating workflows and testing UNC smart contracts.
 """
 
 [dependencies]

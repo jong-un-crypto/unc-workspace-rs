@@ -323,13 +323,13 @@ impl Client {
     }
 
     pub(crate) async fn wait_for_rpc(&self) -> Result<()> {
-        let timeout_secs = match std::env::var("NEAR_RPC_TIMEOUT_SECS") {
+        let timeout_secs = match std::env::var("UNC_RPC_TIMEOUT_SECS") {
             // hard fail on not being able to parse the env var, since this isn't something
             // the user should handle with the library.
             Ok(secs) => secs.parse::<usize>().map_err(|err| {
                 Error::full(
                     ErrorKind::DataConversion,
-                    format!("Failed to parse provided NEAR_RPC_TIMEOUT_SECS={}", secs),
+                    format!("Failed to parse provided UNC_RPC_TIMEOUT_SECS={}", secs),
                     err,
                 )
             })?,

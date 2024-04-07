@@ -64,12 +64,12 @@ pub(crate) fn set_sandbox_configs(home_dir: impl AsRef<Path>) -> Result<()> {
             "rpc": {
                 "limits_config": {
                     // default to 1GB payload size so that large state patches can work.
-                    "json_payload_max_size": parse_env("NEAR_SANDBOX_MAX_PAYLOAD_SIZE")?.unwrap_or(1024 * 1024 * 1024),
+                    "json_payload_max_size": parse_env("UNC_SANDBOX_MAX_PAYLOAD_SIZE")?.unwrap_or(1024 * 1024 * 1024),
                 },
             },
             "store": {
                 // default to 3,000 files open at a time so that windows WSL can work without configuring.
-                "max_open_files": parse_env("NEAR_SANDBOX_MAX_FILES")?.unwrap_or(3000),
+                "max_open_files": parse_env("UNC_SANDBOX_MAX_FILES")?.unwrap_or(3000),
             }
         }),
     )

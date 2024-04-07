@@ -8,7 +8,7 @@ use std::borrow::Cow;
 
 use crate::result::ExecutionFailure;
 
-/// A list specifying general categories of NEAR workspace error.
+/// A list specifying general categories of UNC workspace error.
 #[derive(Clone, Debug, Eq, PartialEq, thiserror::Error)]
 #[non_exhaustive]
 pub enum ErrorKind {

@@ -6,7 +6,7 @@
 
 ### Other
 - Impl Clone on result Value ([#345](https://github.com/unc/unc-workspaces-rs/pull/345))
-- Upgraded NEAR crates to 0.20.0 release ([#346](https://github.com/unc/unc-workspaces-rs/pull/346))
+- Upgraded UNC crates to 0.20.0 release ([#346](https://github.com/unc/unc-workspaces-rs/pull/346))
 - dependecy bumps ([#338](https://github.com/unc/unc-workspaces-rs/pull/338))
 - cleanup internals ([#329](https://github.com/unc/unc-workspaces-rs/pull/329))
 - use stable sandbox by default ([#335](https://github.com/unc/unc-workspaces-rs/pull/335))

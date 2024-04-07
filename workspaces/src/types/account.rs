@@ -86,7 +86,7 @@ impl Account {
         self.worker.view(contract_id, function)
     }
 
-    /// Transfer NEAR to an account specified by `receiver_id` with the amount
+    /// Transfer UNC to an account specified by `receiver_id` with the amount
     /// specified by `amount`. Returns the execution details of this transaction
     pub async fn transfer_unc(
         &self,

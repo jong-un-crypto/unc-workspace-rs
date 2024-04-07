@@ -507,7 +507,7 @@ impl From<unc_primitives::views::AccessKeyView> for AccessKey {
 }
 
 /// Finality of a transaction or block in which transaction is included in. For more info
-/// go to the [NEAR finality](https://docs.unc.org/docs/concepts/transaction#finality) docs.
+/// go to the [UNC finality](https://docs.unc.org/docs/concepts/transaction#finality) docs.
 #[derive(Clone, Debug)]
 #[non_exhaustive]
 pub enum Finality {

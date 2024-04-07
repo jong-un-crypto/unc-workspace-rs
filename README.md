@@ -1,9 +1,9 @@
 <div align="center">
 
-  <h1>NEAR Workspaces (Rust Edition)</h1>
+  <h1>UNC Workspaces (Rust Edition)</h1>
 
   <p>
-    <strong>Rust library for automating workflows and writing tests for NEAR smart contracts. This software is not final, and will likely change.</strong>
+    <strong>Rust library for automating workflows and writing tests for UNC smart contracts. This software is not final, and will likely change.</strong>
   </p>
 
   <p>
@@ -260,7 +260,7 @@ async fn pull_contract(owner: &Account, worker: &Worker<Sandbox>) -> anyhow::Res
     let contract_id: AccountId = CONTRACT_ACCOUNT.parse()?;
 ```
 
-This next line will actually pull down the relevant contract from testnet and set an initial balance on it with 1000 NEAR.
+This next line will actually pull down the relevant contract from testnet and set an initial balance on it with 1000 UNC.
 
 Following that we will have to init the contract again with our own metadata. This is because the contract's data is to big for the RPC service to pull down, who's limits are set to 50kb.
 
@@ -337,7 +337,7 @@ For a full example, take a look at [workspaces/tests/deploy_project.rs](https://
 ### Coverage analysis of WASM executables
 
 Generated code coverage reports help identify areas of code that are executed during testing, making it a valuable tool for ensuring the reliability and quality of your contracts.
-[Here](https://hknio.github.io/wasmcov/docs/NEAR) is the step by step guide documentation to achieve this.
+[Here](https://hknio.github.io/wasmcov/docs/UNC) is the step by step guide documentation to achieve this.
 
 The project can be found here: <https://github.com/hknio/wasmcov>
 
@@ -349,9 +349,9 @@ Other features can be directly found in the `examples/` folder, with some docume
 
 These environment variables will be useful if there was ever a snag hit:
 
-- `NEAR_RPC_TIMEOUT_SECS`: The default is 10 seconds, but this is the amount of time before timing out waiting for a RPC service when talking to the sandbox or any other network such as testnet.
+- `UNC_RPC_TIMEOUT_SECS`: The default is 10 seconds, but this is the amount of time before timing out waiting for a RPC service when talking to the sandbox or any other network such as testnet.
 - `UNC_SANDBOX_BIN_PATH`: Set this to our own prebuilt `uncd-sandbox` bin path if we want to use a non-default version of the sandbox or configure unccore with our own custom features that we want to test in unc-workspaces.
-- `NEAR_SANDBOX_MAX_PAYLOAD_SIZE`: Sets the max payload size for sending transaction commits to sandbox. The default is 1gb and is necessary for patching large states.
-- `NEAR_SANDBOX_MAX_FILES`: Set the max amount of files that can be opened at a time in the sandbox. If none is specified, the default size of 4096 will be used. The actual unc chain will use over 10,000 in practice, but for testing this should be much lower since we do not have a constantly running blockchain unless our tests take up that much time.
-- `NEAR_RPC_API_KEY`: This is the API key necessary for communicating with RPC nodes. This is useful when interacting with services such as Pagoda Console or a service that can access RPC metrics. This is not a **hard** requirement, but it is recommended to running the Pagoda example in the examples folder.
-- `NEAR_ENABLE_SANDBOX_LOG`: Set this to `1` to enable sandbox logging. This is useful for debugging issues with the `uncd-sandbox` binary.
+- `UNC_SANDBOX_MAX_PAYLOAD_SIZE`: Sets the max payload size for sending transaction commits to sandbox. The default is 1gb and is necessary for patching large states.
+- `UNC_SANDBOX_MAX_FILES`: Set the max amount of files that can be opened at a time in the sandbox. If none is specified, the default size of 4096 will be used. The actual unc chain will use over 10,000 in practice, but for testing this should be much lower since we do not have a constantly running blockchain unless our tests take up that much time.
+- `UNC_RPC_API_KEY`: This is the API key necessary for communicating with RPC nodes. This is useful when interacting with services such as Pagoda Console or a service that can access RPC metrics. This is not a **hard** requirement, but it is recommended to running the Pagoda example in the examples folder.
+- `UNC_ENABLE_SANDBOX_LOG`: Set this to `1` to enable sandbox logging. This is useful for debugging issues with the `uncd-sandbox` binary.

@@ -1,6 +1,6 @@
 # Contributing to workspaces-rs
 
-Thank you for your interest in contributing to NEAR's Rust Workspaces! We appreciate any type of contribution.
+Thank you for your interest in contributing to UNC's Rust Workspaces! We appreciate any type of contribution.
 
 Below are various bits of information to help you get started. If you require additional help, please reach out to us on the `Rust Support` channel on [discord](https://discord.gg/uncprotocol) or our [zulip channel](https://unc.zulipchat.com/)
 

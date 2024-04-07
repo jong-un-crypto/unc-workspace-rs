@@ -220,12 +220,12 @@ impl Drop for SandboxServer {
 }
 
 /// Turn off uncd-sandbox logs by default. Users can turn them back on with
-/// NEAR_ENABLE_SANDBOX_LOG=1 and specify further parameters with the custom
-/// NEAR_SANDBOX_LOG for higher levels of specificity. NEAR_SANDBOX_LOG args
+/// UNC_ENABLE_SANDBOX_LOG=1 and specify further parameters with the custom
+/// UNC_SANDBOX_LOG for higher levels of specificity. UNC_SANDBOX_LOG args
 /// will be forward into RUST_LOG environment variable as to not conflict
 /// with similar named log targets.
 fn suppress_sandbox_logs_if_required() {
-    if let Ok(val) = std::env::var("NEAR_ENABLE_SANDBOX_LOG") {
+    if let Ok(val) = std::env::var("UNC_ENABLE_SANDBOX_LOG") {
         if val != "0" {
             return;
         }
@@ -233,5 +233,5 @@ fn suppress_sandbox_logs_if_required() {
 
     // non-exhaustive list of targets to suppress, since choosing a default LogLevel
     // does nothing in this case, since unccore seems to be overriding it somehow:
-    std::env::set_var("NEAR_SANDBOX_LOG", "unc=error,stats=error,network=error");
+    std::env::set_var("UNC_SANDBOX_LOG", "unc=error,stats=error,network=error");
 }

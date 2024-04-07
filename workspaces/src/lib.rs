@@ -1,6 +1,6 @@
-//! # NEAR Workspaces
+//! # UNC Workspaces
 //!
-//! A library for automating workflows and writing tests for NEAR smart contracts.
+//! A library for automating workflows and writing tests for UNC smart contracts.
 //! This software is not final, and will likely change.
 
 // We want to enable all clippy lints, but some of them generate false positives.

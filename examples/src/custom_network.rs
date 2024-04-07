@@ -3,8 +3,8 @@ pub const PAGODA_TESTNET_RPC_URL: &str = "https://unc-testnet.api.pagoda.co/rpc/
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // `NEAR_RPC_API_KEY="xxx" cargo run --package examples --example custom_network`
-    if let Ok(val) = std::env::var("NEAR_RPC_API_KEY") {
+    // `UNC_RPC_API_KEY="xxx" cargo run --package examples --example custom_network`
+    if let Ok(val) = std::env::var("UNC_RPC_API_KEY") {
         // Reference to what can be called by this network: https://docs.pagoda.co/endpoints
         let worker = unc_workspaces::custom(PAGODA_TESTNET_RPC_URL)
             .api_key(&val)
@@ -16,6 +16,6 @@ async fn main() -> anyhow::Result<()> {
     }
 
     // skip the test
-    println!("NEAR_RPC_API_KEY is not set, skipping the example");
+    println!("UNC_RPC_API_KEY is not set, skipping the example");
     Ok(())
 }

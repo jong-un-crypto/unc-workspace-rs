@@ -76,7 +76,7 @@ async fn test_delete_account() -> anyhow::Result<()> {
 
     _ = alice.clone().delete_account(bob.id()).await?;
 
-    // All sandbox accounts start with a balance of 100 NEAR tokens.
+    // All sandbox accounts start with a balance of 100 UNC tokens.
     // On account deletion, alice's balance is debited to bob as beneficiary.
     assert!(bob.view_account().await?.balance > UncToken::from_unc(100));
 
