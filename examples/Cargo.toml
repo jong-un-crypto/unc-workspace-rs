@@ -1,0 +1,103 @@
+[package]
+name = "examples"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[dev-dependencies]
+anyhow = "1.0"
+maplit = "1.0"
+unc-units = "0.1.0"
+unc-gas = { version = "0.1.0", features = ["serde", "borsh", "schemars"] }
+unc-jsonrpc-primitives = "0.6.1"
+unc-primitives = "0.7.0"
+serde = "1.0"
+serde_with = "3.4"
+serde_json = { version = "1.0" }
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3.5", features = ["env-filter"] }
+unc-workspaces = { path = "../workspaces", features = [
+    "experimental",
+    "unstable",
+] }
+
+[build-dependencies]
+anyhow = "1.0"
+unc-workspaces = { path = "../workspaces" }
+
+[[example]]
+name = "async_transaction"
+path = "src/async_transaction.rs"
+
+[[example]]
+name = "nft"
+path = "src/nft.rs"
+
+[[example]]
+name = "status_message"
+path = "src/status_message.rs"
+
+[[example]]
+name = "spooning"
+path = "src/spooning.rs"
+
+[[example]]
+name = "ref_finance"
+path = "src/ref_finance.rs"
+
+[[example]]
+name = "fast_forward"
+path = "src/fast_forward.rs"
+
+[[example]]
+name = "croncat"
+path = "src/croncat.rs"
+
+[[example]]
+name = "various_queries"
+path = "src/various_queries.rs"
+
+[[example]]
+name = "genesis_config"
+path = "src/genesis_config.rs"
+
+[[example]]
+name = "validators_ordered"
+path = "src/validators_ordered.rs"
+
+[[example]]
+name = "protocol_config"
+path = "src/protocol_config.rs"
+
+[[example]]
+name = "changes_in_block"
+path = "src/changes_in_block.rs"
+
+[[example]]
+name = "changes"
+path = "src/changes.rs"
+
+[[example]]
+name = "receipt"
+path = "src/receipt.rs"
+
+[[example]]
+name = "tx_status"
+path = "src/tx_status.rs"
+
+[[example]]
+name = "noop"
+path = "src/noop.rs"
+
+[[example]]
+name = "custom_network"
+path = "src/custom_network.rs"
+
+[[example]]
+name = "build_gen_abi"
+path = "src/build_gen_abi.rs"
+
+[[example]]
+name = "macro_gen_abi"
+path = "src/macro_gen_abi.rs"

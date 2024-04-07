@@ -1,0 +1,66 @@
+[package]
+name = "unc-workspaces"
+version = "0.7.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/unc/unc-workspaces-rs"
+description = """
+Library for automating workflows and testing NEAR smart contracts.
+"""
+
+[dependencies]
+async-trait = "0.1"
+base64 = "0.22.0"
+bs58 = "0.5"
+cargo_metadata = { version = "0.18", optional = true }
+cargo-unc = { version = "0.1.0", default-features = false }
+chrono = "0.4.19"
+fs2 = "0.4"
+rand = "0.8.4"
+reqwest = { version = "0.12.3", features = ["json"] }
+sha2 = "0.10"
+serde = "1.0"
+serde_json = "1.0"
+json-patch = "1.0"
+tempfile = "3.3"
+thiserror = "1.0"
+tokio = { version = "1", features = ["full"] }
+tokio-retry = "0.3"
+tracing = "0.1"
+url = { version = "2.2.2", features = ["serde"] }
+
+unc-abi-client = "0.1.0"
+unc-gas = { version = "0.1.0", features = ["serde", "borsh", "schemars"] }
+unc-token = { version = "0.4.0", features = ["serde"] }
+unc-sdk = { version = "0.7.0", optional = true }
+unc-account-id = "0.1.0"
+unc-crypto = "0.7.1"
+unc-primitives = "0.7.1"
+unc-jsonrpc-primitives = "0.7.1"
+unc-jsonrpc-client = { version = "0.7.1", features = ["sandbox"] }
+unc-sandbox-utils = "0.7.0"
+unc-chain-configs = { version = "0.7.1", optional = true }
+
+[build-dependencies]
+unc-sandbox-utils = "0.7.0"
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[dev-dependencies]
+anyhow = "1.0"
+futures = "0.3"
+unc-sdk = "0.7.0"
+test-log = { version = "0.2.8", default-features = false, features = ["trace"] }
+tracing-subscriber = { version = "0.3.5", features = ["env-filter"] }
+
+[features]
+default = ["install"]
+install = []                          # Install the sandbox binary during compile time
+interop_sdk = ["unc-sdk"]
+unstable = ["cargo_metadata"]
+experimental = ["unc-chain-configs"]
+
+[package.metadata.docs.rs]
+features = ["unstable"]
