@@ -1,6 +1,6 @@
 [package]
 name = "unc-workspaces"
-version = "0.7.2"
+version = "0.7.3"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
@@ -15,7 +15,7 @@ base64 = "0.22.0"
 bs58 = "0.5"
 cargo_metadata = { version = "0.18", optional = true }
 cargo-unc = { version = "0.7.1", default-features = false }
-chrono = "0.4.19"
+chrono = "0.4.37"
 fs2 = "0.4"
 rand = "0.8.4"
 reqwest = { version = "0.12.3", features = ["json"] }
@@ -33,14 +33,14 @@ url = { version = "2.2.2", features = ["serde"] }
 unc-abi-client = "0.1.0"
 unc-gas = { version = "0.1.0", features = ["serde", "borsh", "schemars"] }
 unc-token = { version = "0.4.0", features = ["serde"] }
-unc-sdk = { version = "0.7.0", optional = true }
+unc-sdk = { version = "0.7.3", optional = true }
 unc-account-id = "0.1.0"
-unc-crypto = "0.7.1"
-unc-primitives = "0.7.1"
-unc-jsonrpc-primitives = "0.7.1"
-unc-jsonrpc-client = { version = "0.7.1", features = ["sandbox"] }
+unc-crypto = "0.7.2"
+unc-primitives = "0.7.2"
+unc-jsonrpc-primitives = "0.7.2"
+unc-jsonrpc-client = { version = "0.7.2", features = ["sandbox"] }
 unc-sandbox-utils = "0.7.0"
-unc-chain-configs = { version = "0.7.1", optional = true }
+unc-chain-configs = { version = "0.7.2", optional = true }
 
 [build-dependencies]
 unc-sandbox-utils = "0.7.0"
@@ -51,7 +51,7 @@ libc = "0.2"
 [dev-dependencies]
 anyhow = "1.0"
 futures = "0.3"
-unc-sdk = "0.7.0"
+unc-sdk = "0.7.3"
 test-log = { version = "0.2.8", default-features = false, features = ["trace"] }
 tracing-subscriber = { version = "0.3.5", features = ["env-filter"] }
 
