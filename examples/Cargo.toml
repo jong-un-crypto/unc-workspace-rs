@@ -9,7 +9,7 @@ anyhow = "1.0"
 maplit = "1.0"
 unc-units = "0.1.0"
 unc-gas = { version = "0.1.0", features = ["serde", "borsh", "schemars"] }
-unc-jsonrpc-primitives = "0.6.1"
+unc-jsonrpc-primitives = "0.7.2"
 unc-primitives = "0.7.0"
 serde = "1.0"
 serde_with = "3.4"

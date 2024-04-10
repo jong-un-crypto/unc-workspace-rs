@@ -8,7 +8,7 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
-unc-sdk = "5.0.0-alpha.2"
+unc-sdk = "0.7.3"
 
 [profile.release]
 codegen-units = 1

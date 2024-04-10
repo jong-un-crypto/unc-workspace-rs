@@ -36,7 +36,7 @@ use {
     unc_primitives::{
         types::MaybeBlockId,
         views::{
-            validator_stake_view::ValidatorStakeView, FinalExecutionOutcomeWithReceiptView,
+            validator_power_and_pledge_view::ValidatorPowerAndPledgeView, FinalExecutionOutcomeWithReceiptView,
             ReceiptView, StateChangesRequestView,
         },
     },
@@ -438,7 +438,7 @@ impl Client {
     pub(crate) async fn validators_ordered(
         &self,
         block_id: MaybeBlockId,
-    ) -> Result<Vec<ValidatorStakeView>> {
+    ) -> Result<Vec<ValidatorPowerAndPledgeView>> {
         let resp = self
             .rpc_client
             .call(

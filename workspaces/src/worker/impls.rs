@@ -23,7 +23,7 @@ use {
     unc_primitives::{
         types::{BlockReference, MaybeBlockId},
         views::{
-            validator_stake_view::ValidatorStakeView, FinalExecutionOutcomeWithReceiptView,
+            validator_power_and_pledge_view::ValidatorPowerAndPledgeView, FinalExecutionOutcomeWithReceiptView,
             ReceiptView, StateChangesRequestView,
         },
     },
@@ -248,7 +248,7 @@ where
     pub async fn validators_ordered(
         &self,
         block_id: MaybeBlockId,
-    ) -> Result<Vec<ValidatorStakeView>> {
+    ) -> Result<Vec<ValidatorPowerAndPledgeView>> {
         self.client().validators_ordered(block_id).await
     }
 }
