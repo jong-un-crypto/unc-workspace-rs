@@ -5,19 +5,19 @@ This example will show us how to spin up a sandbox node of our own choosing. Fol
 Then initialize the chain via `init` and run it:
 
 ```sh
-unc-sandbox --home ${MY_HOME_DIRECTORY} init
-unc-sandbox --home ${MY_HOME_DIRECTORY} run
+uncd-sandbox --home ${MY_HOME_DIRECTORY} init
+uncd-sandbox --home ${MY_HOME_DIRECTORY} run
 ```
 
 This will launch the chain onto `localhost:3030` by default. The `${MY_HOME_DIRECTORY}` is a path of our choosing here and this will be needed when running the workspaces code later on. In the following example, we had it set to `/home/user/.unc-sandbox-home`.
 
-In workspaces, to connect to our manually launched node, all we have to do is add a few additional parameters to `workspaces::sandbox()`:
+In workspaces, to connect to our manually launched node, all we have to do is add a few additional parameters to `unc_workspaces::sandbox()`:
 
 ```rs
 #[tokio::main]
 fn main() {
-    let worker = workspaces::sandbox()
-        .rpc_addr("http://localhost:3030")
+    let worker = unc_workspaces::sandbox()
+        .rpc_addr("http://localhost:9000")
         .home_dir("/home/user/.unc-sandbox-home")
         .await?;
 

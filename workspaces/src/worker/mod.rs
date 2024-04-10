@@ -4,7 +4,7 @@ use std::fmt;
 use std::sync::Arc;
 
 use crate::network::builder::NetworkBuilder;
-use crate::network::{Betanet, Custom, Mainnet, Sandbox, Testnet};
+use crate::network::{Custom, Mainnet, Sandbox, Testnet};
 use crate::types::gas_meter::GasHook;
 use crate::{Network, Result};
 
@@ -82,11 +82,6 @@ pub fn mainnet_archival<'a>() -> NetworkBuilder<'a, Mainnet> {
     NetworkBuilder::new("mainnet-archival").rpc_addr(crate::network::mainnet::ARCHIVAL_URL)
 }
 
-/// Connect to the betanet network, and grab a [`Worker`] that can interact with it.
-pub fn betanet<'a>() -> NetworkBuilder<'a, Betanet> {
-    NetworkBuilder::new("betanet")
-}
-
 /// Connect to a custom network, and grab a [`Worker`] that can interact with it.
 ///
 /// Note: the burden of ensuring the methods that are able to be called are left up to the user.
@@ -137,15 +132,6 @@ where
     T: core::future::Future + Send,
 {
     Ok(task(mainnet_archival().await?).await)
-}
-
-/// Run a locally scoped task where a [`betanet`] instanced [`Worker`] is supplied.
-pub async fn with_betanet<F, T>(task: F) -> Result<T::Output>
-where
-    F: Fn(Worker<Betanet>) -> T + Send + Sync,
-    T: core::future::Future + Send,
-{
-    Ok(task(betanet().await?).await)
 }
 
 #[allow(dead_code)]

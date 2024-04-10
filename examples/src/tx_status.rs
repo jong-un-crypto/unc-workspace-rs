@@ -7,6 +7,12 @@ const STATUS_MSG_WASM_FILEPATH: &str = "./examples/res/status_message.wasm";
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let worker = unc_workspaces::sandbox().await?;
+    // let home_dir = PathBuf::from("/Users/es/.sandbox");
+    // let worker = unc_workspaces::sandbox()
+    // .rpc_addr("http://localhost:9000")
+    // .validator_key(ValidatorKey::HomeDir(home_dir))
+    // .await?;
+
     let wasm = std::fs::read(STATUS_MSG_WASM_FILEPATH)?;
     let contract = worker.dev_deploy(&wasm).await?;
 

@@ -1,8 +1,8 @@
 [package]
 name = "unc-workspaces"
-version = "0.8.0"
+version = "0.8.2"
 edition = "2021"
-license = "MIT OR Apache-2.0"
+license = "GPL-2.0-or-later"
 readme = "README.md"
 repository = "https://github.com/unc/unc-workspaces-rs"
 description = """
@@ -39,11 +39,11 @@ unc-crypto = "0.7.2"
 unc-primitives = "0.7.2"
 unc-jsonrpc-primitives = "0.7.2"
 unc-jsonrpc-client = { version = "0.7.2", features = ["sandbox"] }
-unc-sandbox-utils = "0.8.0"
+unc-sandbox-utils = "0.8.2"
 unc-chain-configs = { version = "0.7.2", optional = true }
 
 [build-dependencies]
-unc-sandbox-utils = "0.8.0"
+unc-sandbox-utils = "0.8.2"
 
 [target.'cfg(unix)'.dependencies]
 libc = "0.2"
