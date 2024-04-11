@@ -24,7 +24,7 @@ pub trait TopLevelAccountCreator {
         sk: SecretKey,
     ) -> Result<Execution<Account>>;
 
-    async fn create_tla_and_deploy(
+    async fn create_account_and_deploy(
         &self,
         worker: Worker<dyn Network>,
         id: AccountId,
@@ -54,7 +54,7 @@ where
         Ok(res)
     }
 
-    pub async fn create_tla_and_deploy(
+    pub async fn create_account_and_deploy(
         &self,
         id: AccountId,
         sk: SecretKey,
@@ -62,7 +62,7 @@ where
     ) -> Result<Execution<Contract>> {
         let res = self
             .workspace
-            .create_tla_and_deploy(self.clone().coerce(), id, sk, wasm)
+            .create_account_and_deploy(self.clone().coerce(), id, sk, wasm)
             .await?;
 
         for callback in self.tx_callbacks.iter() {
@@ -86,7 +86,7 @@ where
 
     pub async fn dev_deploy(&self, wasm: &[u8]) -> Result<Contract> {
         let (id, sk) = self.dev_generate().await;
-        let contract = self.create_tla_and_deploy(id.clone(), sk, wasm).await?;
+        let contract = self.create_account_and_deploy(id.clone(), sk, wasm).await?;
         Ok(contract.into_result()?)
     }
 }

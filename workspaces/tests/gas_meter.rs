@@ -15,7 +15,7 @@ async fn test_gas_meter_with_single_transaction() -> anyhow::Result<()> {
     let status_msg = {
         let (id, sk) = worker.dev_generate().await;
         let contract = worker
-            .create_tla_and_deploy(
+            .create_account_and_deploy(
                 id.clone(),
                 sk,
                 include_bytes!("../../examples/res/status_message.wasm"),
@@ -59,7 +59,7 @@ async fn test_gas_meter_with_multiple_transactions() -> anyhow::Result<()> {
     let status_msg = {
         let (id, sk) = worker.dev_generate().await;
         let contract = worker
-            .create_tla_and_deploy(
+            .create_account_and_deploy(
                 id.clone(),
                 sk,
                 include_bytes!("../../examples/res/status_message.wasm"),
@@ -112,7 +112,7 @@ async fn test_gas_meter_with_parallel_transactions() -> anyhow::Result<()> {
     let status_msg = {
         let (id, sk) = worker.dev_generate().await;
         let contract = worker
-            .create_tla_and_deploy(
+            .create_account_and_deploy(
                 id.clone(),
                 sk,
                 include_bytes!("../../examples/res/status_message.wasm"),
@@ -170,7 +170,7 @@ async fn test_gas_meter_with_multiple_transactions_and_view() -> anyhow::Result<
     let status_msg = {
         let (id, sk) = worker.dev_generate().await;
         let contract = worker
-            .create_tla_and_deploy(
+            .create_account_and_deploy(
                 id.clone(),
                 sk,
                 include_bytes!("../../examples/res/status_message.wasm"),
@@ -233,7 +233,7 @@ async fn test_gas_meter_batch_tx() -> anyhow::Result<()> {
     let contract = {
         let (id, sk) = worker.dev_generate().await;
         let contract = worker
-            .create_tla_and_deploy(
+            .create_account_and_deploy(
                 id.clone(),
                 sk,
                 include_bytes!("../../examples/res/status_message.wasm"),

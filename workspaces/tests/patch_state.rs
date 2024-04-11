@@ -136,7 +136,7 @@ async fn test_patch_full() -> anyhow::Result<()> {
         .account(
             AccountDetailsPatch::default()
                 .balance(UncToken::from_unc(100))
-                .locked(status_msg_acc.locked)
+                .pledging(status_msg_acc.pledging)
                 .code_hash(status_msg_acc.code_hash)
                 .storage_usage(status_msg_acc.storage_usage),
         )

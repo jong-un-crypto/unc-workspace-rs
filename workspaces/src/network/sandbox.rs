@@ -139,7 +139,7 @@ impl TopLevelAccountCreator for Sandbox {
         })
     }
 
-    async fn create_tla_and_deploy(
+    async fn create_account_and_deploy(
         &self,
         worker: Worker<dyn Network>,
         id: AccountId,
