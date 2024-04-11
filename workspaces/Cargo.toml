@@ -4,7 +4,7 @@ version = "0.8.2"
 edition = "2021"
 license = "GPL-2.0-or-later"
 readme = "README.md"
-repository = "https://github.com/unc/unc-workspaces-rs"
+repository = "https://github.com/utnet.org/unc-workspaces-rs"
 description = """
 Library for automating workflows and testing UNC smart contracts.
 """
